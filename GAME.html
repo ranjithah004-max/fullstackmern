@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: cursive;
+            background-color:black ;
+            color:antiquewhite;
+            background-image: url("https://4kwallpapers.com/images/wallpapers/purple-lily-dark-2880x1800-12092.jpg");
+            background-repeat: repeat;
+            background-size: 120vh 100vw;
+
+        }
+        h1{
+            text-align: center;
+        }
+        button{
+            background-color: burlywood;
+            border-radius: 20px;
+            text-align:center;
+            color: rgb(0, 0, 104);
+            padding: 10px;
+            margin: 50px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #result{
+            color: rgb(250, 250, 0);
+            margin-top: 30px;
+            font-size: 20px;
+            text-align: center;
+            margin-left:20px ;
+            font-family: cursive;
+        }
+        #score{
+            color: rgb(13, 237, 237);
+            margin-top: 10px;
+            font-size: 20px; 
+            text-align: center;
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock Paper Scissor</h1>
+    <button onclick="play('rock')">Rock</button>
+    <button onclick="play('paper')">Paper</button>
+    <button onclick="play('scissor')">Scissor</button>
+    <div id="result"></div>
+    <div id="score"></div>
+    <script>
+        let userinput=0;
+        let computerscore=0;
+        function play(userChoice){
+            const choices=['rock','paper','scissor'];
+            const computerChoice=choices[Math.floor(Math.random()*3)];
+           let resulttext="";
+            if(userChoice===computerChoice){
+            resulttext="tie";
+           }
+           else if(userChoice==='rock'&&computerChoice==='scissor'||userChoice==='paper'&&computerChoice==='rock'||userChoice==='scissor'&&computerChoice==='paper'){
+            resulttext="win";
+            userinput++;
+           }
+           else{
+            resulttext="lose";
+            computerscore++;
+           }
+           document.getElementById("result").innerText=`You: ${userChoice} | Computer: ${computerChoice} → ${resulttext}`;
+           document.getElementById("score").innerText=`Your Score: ${userinput}  Computer Score: ${computerscore}`;
+        }
+         
+        
+    </script>
+    
+</body>
+</html>

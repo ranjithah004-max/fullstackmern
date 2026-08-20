@@ -1,0 +1,29 @@
+import { useEffect,useState }from "react"
+
+const Effect=()=>{
+     const[users,setUsers]=useState([])
+     useEffect(()=>{
+        const getData=async () =>{
+            try{
+                const res=await fetch('https://jsonplaceholder.typicode.com/users')
+                const data=await res.json()
+                setUsers(data)
+            }catch(error){
+                console.log(error)
+            }
+        }
+        getData();
+     },[]);
+     return(
+        <div>
+            <h1>UseEffect Example</h1>
+            <ol>
+                {users.map((user)=>(
+                    <li>{user.name}</li>
+                ))}
+            </ol>
+        </div>
+     );
+};
+
+export default Effect;

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media (max-width:600px) {
+            .navbar{
+                display:flex;
+                flex-direction: column;
+                height:500px;
+                color: blanchedalmond;
+                padding-bottom:150px ;
+            }
+            .container{
+                display:flex;
+                flex-direction: column;
+            }
+        }
+        .navbar{
+            font-family:cursive;
+            display:flex;
+            justify-content: space-around;
+            height: 50px;
+            align-items: center; 
+            color: aliceblue;
+            background-color: rgb(29, 42, 65);
+            border-radius: 40px;
+        }
+        .container{
+            display: flex;
+            justify-content: space-evenly;
+            width: 300px;
+            
+        }
+        li{
+            list-style:none;
+        }
+        li:hover{
+            color:red;
+            text-decoration:underline;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h3>Mysite</h3>
+        <ul class="container">
+            <li>Home   </li>
+            <li>About   </li>
+            <li>Contact   </li>
+            <li>Service  </li>
+        </ul> 
+    </div>
+</body>
+</html>\
